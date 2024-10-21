@@ -1,0 +1,149 @@
+MicrosoftEdgeUpdateTaskMachineCore
+MicrosoftEdgeUpdateTaskMachineUA
+Server Initial Configuration Task
+.NET Framework NGEN v4.0.30319
+.NET Framework NGEN v4.0.30319 64
+.NET Framework NGEN v4.0.30319 64 Critical
+.NET Framework NGEN v4.0.30319 Critical
+AD RMS Rights Policy Template Management (Automated)
+AD RMS Rights Policy Template Management (Manual)
+EDP Policy Manager
+PolicyConverter
+VerifiedPublisherCertStoreCheck
+Microsoft Compatibility Appraiser
+PcaPatchDbTask
+ProgramDataUpdater
+StartupAppTask
+appuriverifierdaily
+appuriverifierinstall
+CleanupTemporaryState
+DsSvcCleanup
+Pre-staged app cleanup
+Proxy
+BitLocker Encrypt All Drives
+BitLocker MDM policy Refresh
+UninstallDeviceTask
+BgTaskRegistrationMaintenanceTask
+AikCertEnrollTask
+CryptoPolicyTask
+KeyPreGenTask
+SystemTask
+UserTask
+UserTask-Roam
+ProactiveScan
+SyspartRepair
+License Validation
+CreateObjectTask
+Consolidator
+UsbCeip
+Data Integrity Check And Scan
+Data Integrity Scan
+Data Integrity Scan for Crash Recovery
+ScheduledDefrag
+Device
+Device User
+Metadata Refresh
+Scheduled
+DirectXDatabaseUpdater
+DXGIAdapterCache
+SilentCleanup
+Microsoft-Windows-DiskDiagnosticDataCollector
+Microsoft-Windows-DiskDiagnosticResolver
+Diagnostics
+StorageSense
+EDP App Launch Task
+EDP Auth Task
+EDP Inaccessible Credentials Task
+StorageCardEncryption Task
+ExploitGuard MDM policy Refresh
+Property Definition Sync
+ReconcileFeatures
+UsageDataFlushing
+UsageDataReporting
+RefreshCache
+LocalUserSyncDataAvailable
+MouseSyncDataAvailable
+PenSyncDataAvailable
+TouchpadSyncDataAvailable
+ScanForUpdates
+ScanForUpdatesAsUser
+SmartRetry
+WakeUpAndContinueUpdates
+WakeUpAndScanForUpdates
+Synchronize Language Settings
+Installation
+Uninstallation
+TempSignedLicenseExchange
+Notifications
+WindowsActionDialog
+WinSAT
+MapsToastTask
+MapsUpdateTask
+ProcessMemoryDiagnosticEvents
+RunFullMemoryDiagnostic
+LPRemove
+SystemSoundsService
+GatherNetworkInfo
+SDN Diagnostics Task
+Background Synchronization
+Logon Synchronization
+Secure-Boot-Update
+Sqm-Tasks
+Server Manager Performance Monitor
+Device Install Group Policy
+Device Install Reboot Required
+Sysprep Generalize Drivers
+AnalyzeSystem
+LoginCheck
+Registration
+MobilityManager
+VerifyWinRE
+RegIdleBackup
+CleanupOldPerfLogs
+ServerManager
+StartComponentCleanup
+Account Cleanup
+CreateObjectTask
+IndexerAutomaticMaintenance
+UpdateUserPictureTask
+Collection
+Configuration
+SvcRestartTask
+SvcRestartTaskLogon
+SvcRestartTaskNetwork
+SpaceAgentTask
+SpaceManagerTask
+SpeechModelDownloadTask
+MaintenanceTasks
+Storage Tiers Management Initialization
+Storage Tiers Optimization
+Interactive
+MsCtfMonitor
+ForceSynchronizeTime
+SynchronizeTime
+SynchronizeTimeZone
+Tpm-HASCertRetr
+Tpm-Maintenance
+Report policies
+Schedule Scan
+Schedule Scan Static Task
+USO_UxBroker
+UUS Failover Task
+UPnPHostConfig
+HiveUploadTask
+PerformRemediation
+ResolutionHost
+Windows Defender Cache Maintenance
+Windows Defender Cleanup
+Windows Defender Scheduled Scan
+Windows Defender Verification
+QueueReporting
+BfeOnServiceStartTypeChange
+UpdateLibrary
+Calibration Loader
+Scheduled Start
+CacheTask
+Automatic-Device-Join
+Device-Sync
+Recovery-Check
+OobeDiscovery
