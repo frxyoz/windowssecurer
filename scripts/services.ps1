@@ -61,8 +61,8 @@ if(($KeepDNS -eq "y") -or ($KeepDNS -eq "Y")){
     & $PSScriptRoot/harden-DNS.ps1
 }
 
-$EnabledServices = Get-Content -Path "$PSScriptRoot/../enabled_services.txt"
-$DisabledServices = Get-Content -Path "$PSScriptRoot/../disabled_services.txt"
+$DisabledServices = Get-Content -Path "$PSScriptRoot/../enabled_services.txt"
+$EnabledServices = Get-Content -Path "$PSScriptRoot/../disabled_services.txt"
 
 foreach($Service in $EnabledServices) {
     Write-Output "Starting $Service"

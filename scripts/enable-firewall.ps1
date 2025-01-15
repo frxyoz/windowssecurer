@@ -1,15 +1,14 @@
-Write-Output "`n---Configuring Windows Defender Firewall"
+Write-Output "`n---Disabling Windows Defender Firewall"
 
-if((Get-Service -Name 'mpssvc').Status -ne $running){
-    Write-Output "Windows Defender Firewall is not on. Attempting to turn it on."
-    reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile" /v EnableFirewall /t REG_DWORD /d 1 /f # enable firewall
-    reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\DomainProfile" /v EnableFirewall /t REG_DWORD /d 1 /f # enable firewall
+if((Get-Service -Name 'mpssvc').Status -eq 'running'){
+    Write-Output "Windows Defender Firewall is on. Attempting to turn it off."
+    reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile" /v EnableFirewall /t REG_DWORD /d 0 /f # disable firewall
+    reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\DomainProfile" /v EnableFirewall /t REG_DWORD /d 0 /f # disable firewall
+    Stop-Service mpssvc
+    Set-Service mpssvc -StartupType Disabled
 }else{
-    Write-Output "Windows Defender Firewall is already on. Making sure it is configured correctly."
+    Write-Output "Windows Defender Firewall is already off."
 }
-Set-Service mpssvc -StartupType Automatic
-Start-Service mpssvc
-Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
-Set-NetFirewallProfile -DefaultInboundAction Block -DefaultOutboundAction Allow
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 
-if((Get-Service -Name 'mpssvc').Status -ne 'running'){Write-Output "Windows Defender Firewall is broken and still not enabled."}
+if((Get-Service -Name 'mpssvc').Status -eq 'running'){Write-Output "Windows Defender Firewall is broken and still enabled."}
