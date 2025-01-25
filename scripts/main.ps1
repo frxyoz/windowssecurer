@@ -37,11 +37,14 @@ if($Internet){
 
 & $PSScriptRoot/enable-firewall.ps1
 & $PSScriptRoot/enable-defender.ps1
-
-
-
+& $PSScriptRoot/import-secpol.ps1
+& $PSScriptRoot/auditpol.ps1
+& $PSScriptRoot/uac.ps1
+& $PSScriptRoot/registry-hardening.ps1 -productType $ProductType
 
 # utilities
+& $PSScriptRoot/task-stuff.ps1 -productType $ProductType
+& $PSScriptRoot/service-enum.ps1 -productType $ProductType
 cmd.exe /c "$PSScriptRoot/../util/media.bat"
 
 # configuring users/passwords, assumes users.txt and admins.txt have been filled in already, bc there's a check
@@ -61,10 +64,13 @@ if(($firefox -eq "Y") -or ($firefox -eq "y")){
     & $PSScriptRoot/configure-firefox.ps1
 }
 
-$removeAll = Read-Host "Do you want to uninstall specific applications? [y/n] (Default: n)"
-if(($removeAll -eq "Y") -or ($removeAll -eq "y")){
-    & $PSScriptRoot/remove-all.ps1
-}
+#Disable IPv6 Services --> Does not disable IPv6 interface
+Write-Output "Disabling IPv6 Services"
+netsh interface teredo set state disabled
+netsh interface ipv6 6to4 set state state=disabled undoonstop=disabled
+netsh interface ipv6 isatap set state state=disabled
+
+& $PSScriptRoot/import-gpo.ps1 -productType $ProductType
 
 $EndTime = Get-Date
 $ts = New-TimeSpan -Start $StartTime
